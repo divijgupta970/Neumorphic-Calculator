@@ -11,6 +11,8 @@
 
         <TextView
             android:id="@+id/tvInput"
+            android:maxLines="1"
+            android:ellipsize="end"
             style="@style/InputText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
