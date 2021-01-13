@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bgColor">#374352</color>
+    <color name="numText">#FFFFFF</color>
+    <color name="opText">#8B9695</color>
+    <color name="dispText">#FFFFFF</color>
+    <color name="shadowColorLight">#475260</color>
+    <color name="shadowColorDark">#2D3743</color>
+</resources>
