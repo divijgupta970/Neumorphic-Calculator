@@ -1,21 +1,21 @@
 package com.divijgupta.neumorphiccalculator
 
+import android.media.MediaPlayer
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.divijgupta.neumorphiccalculator.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
-import java.lang.Exception
+
 
 private lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity() {
+    lateinit var mp : MediaPlayer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        mp = MediaPlayer.create(this, R.raw.tap)
         binding.btnClear.setOnClickListener {
             clear()
         }
@@ -84,12 +84,15 @@ class MainActivity : AppCompatActivity() {
     }
     fun clear() {
         //binding.tvAns.text = ""
+        mp.start()
         binding.tvInput.text = ""
     }
-    fun append(s : String) {
+    fun append(s: String) {
+        mp.start()
         binding.tvInput.append(s)
     }
     fun findAns() {
+        mp.start()
         try {
             val expression = ExpressionBuilder(binding.tvInput.text.toString()).build()
             val result = expression.evaluate()
